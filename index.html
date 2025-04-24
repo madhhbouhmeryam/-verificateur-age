@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Vérification d'âge</title>
+  </head>
+  <body>
+    <h2>Quel est votre âge ?</h2>
+    
+    <!-- Champ pour entrer l'âge -->
+    <input type="number" id="ageInput" placeholder="Entrez votre âge">
+    
+    <!-- Bouton pour lancer la vérification -->
+    <button onclick="verifierAge()">Vérifier</button>
+    
+    <!-- Zone pour afficher le résultat -->
+    <div id="resultat"></div>
+
+</body>
+<script>
+    function verifierAge()
+     {
+       
+         let ageInput = document.getElementById("ageInput").value;
+         let age = Number.parseInt(ageInput);
+        if ( isNaN(age) || ageInput=== "")
+            {
+                alert("Veuillez entrer un âge valide."); 
+                return;
+            }
+     
+         if (age >= 18) 
+            {
+                document.getElementById("resultat").textContent="Vous êtes majeur ";
+            }
+         else   
+            {
+                document.getElementById("resultat").textContent="Vous êtes mineur";
+            }
+    }
+ 
+</script>
+</html>
